@@ -1,0 +1,16 @@
+body{
+    background-image: url('360_F_281852727_A4ThCn8oRJaq4l4YsAMBl28P3psm5iE5.jpg');
+    background-size: cover;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container h1{
+    color:white;
+}
+
+.container button{
+   padding:5px 20px;
+}
