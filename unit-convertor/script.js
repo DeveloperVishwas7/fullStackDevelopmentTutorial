@@ -19,7 +19,7 @@ document.querySelector('.js-btn-convert').addEventListener('click',()=>{
     `
     
     document.querySelector('.js-show-result').innerHTML = html;
-    value = '';
+    inputElement.value = '';
 })
 
 function meterToFeet(value){
