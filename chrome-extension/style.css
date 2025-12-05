@@ -16,7 +16,7 @@ div{
     box-sizing: border-box;;
 }
 
-.input-btn, .delete-btn{
+.input-btn, .delete-btn, .tab-btn{
     border:none;
     background-color: rgb(82, 157, 7);
     color:white;
@@ -30,8 +30,19 @@ div{
     border:1px solid rgb(82, 157, 7);
     border-radius:4px;
 }
+
+.remove-lead{
+    color:rgb(82, 157, 7);
+    border:none;
+    background: transparent;
+}
+.remove-lead:hover{
+    text-decoration: underline;
+}
+
 ul{
     list-style: none;
+    padding:0;
 }
 li{
     margin-bottom:10px;

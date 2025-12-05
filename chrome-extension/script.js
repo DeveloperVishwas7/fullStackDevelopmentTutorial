@@ -2,6 +2,31 @@ document.querySelector('.js-input-btn').addEventListener('click',()=>{
     saveLead();
 })
 
+const tabBtn = document.querySelector('.tab-btn');
+/*
+const tabs = [
+    {url:"https://www.linkedin.com/in/per-herald-borgen/"}
+]*/
+
+tabBtn.addEventListener('click',()=>{
+    /*
+        chrome.tabs.query({ active: true,lastFocusedWindow: true}, function(tabs) {
+            console.log(tabs);
+            let tab = tabs[0];
+            let activeTabId =  tab.id;
+        });*/
+
+        chrome.tabs.query({active: true, currentWindow: true},(tabs)=>{
+            myLeads.push({
+                lead: tabs[0].url,
+                leadId:tabs[0].url,
+            });
+            localStorage.setItem('leads', JSON.stringify(myLeads));
+            renderLeadsList();
+        })
+        
+})
+
 let myLeads = JSON.parse(localStorage.getItem('leads'))||[];
 function saveLead(){
     const inputElement = document.querySelector('.js-input-el');
@@ -23,7 +48,7 @@ function renderLeadsList(){
                     <a href="${leads.lead}" target = '_blank'>
                          ${leads.lead}
                     </a>
-                    <button class="js-remove-lead" data-leads-id='${leads.leadId}'>remove</button>
+                    <button class="remove-lead js-remove-lead" data-leads-id='${leads.leadId}'>remove</button>
                  </li>`
     })
     document.querySelector('.leads-list').innerHTML = html;

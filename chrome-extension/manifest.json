@@ -1,10 +1,12 @@
 {
     "manifest_version": 3,
-    "version":"1.5",
+    "version":"1.9",
     "name":"Leads Tracker",
     "action":{
         "default_popup":"index.html",
         "default_icon":"icon.jpg"
     },
+    "permissions": ["activeTab", "storage"],
+    "host_permissions": ["<all_urls>"],
     "description":"add, save, and remove your leads"
 }
